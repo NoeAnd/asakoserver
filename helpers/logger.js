@@ -9,10 +9,7 @@ const LOGS_DEV_NAME     = 'dev';
 
 exports.addLog = function (message) {
     message = '[' + new Date() + ']' + message + '\n';
-
     createFolder();
-
-
     fs.appendFile(LOGS_FORLDER_NAME + "/" + LOGS_DEV_NAME + ".txt", message, function (error) {
         if(error) {
             throw error;
